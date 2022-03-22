@@ -8,19 +8,24 @@
 // ... který pak přidej dovnitř prvku <div id="vyherni-cisla">:
 
 let osudi = [];
+let tazenaCisla = [];
+let vyherniCislo = document.querySelector('#vyherni-cisla');
 
 for (let i = 1; i <=49; i = i + 1) {
   osudi.push(i);
 }
 
-let tazenaCisla = [];
+
 
 for (let i = 0; i < 7; i++) {
   let vyherniIndex = Math.floor(Math.random() * osudi.length);
-  let vyherniCislo = osudi [vyherniIndex];
+  let vyherniCislo = osudi[vyherniIndex];
+
   tazenaCisla.push(vyherniCislo);
   osudi.splice(vyherniIndex, 1);
-  console.log(tazenaCisla);
-  console.log(osudi); 
+}
 
+
+for(let j = 0; j < tazenaCisla.length; j++) {
+  vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>';
 }
