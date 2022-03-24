@@ -11,21 +11,40 @@ let osudi = [];
 let tazenaCisla = [];
 let vyherniCislo = document.querySelector('#vyherni-cisla');
 
-for (let i = 1; i <=49; i = i + 1) {
+
+for (let i = 1; i <= 49; i = i + 1) {
   osudi.push(i);
 }
 
+for (let j = 0; j < 7; j++) {
+  vyherniCislo.innerHTML += '<span class="cislo">' + '</span>';
+}
+
+function losuj() {
+  vyherniCislo.innerHTML = "";
+  tazenaCisla.forEach(function (ele) {
+    osudi.push(ele);
+  })
+  tazenaCisla.splice(0, tazenaCisla.length);
 
 
-for (let i = 0; i < 7; i++) {
-  let vyherniIndex = Math.floor(Math.random() * osudi.length);
-  let vyherniCislo = osudi[vyherniIndex];
+  for (let i = 0; i < 7; i++) {
+    let vyherniIndex = Math.floor(Math.random() * osudi.length);
+    let vyherniCislo = osudi[vyherniIndex];
+    tazenaCisla.push(vyherniCislo);
+    osudi.splice(vyherniIndex, 1);
+  }
 
-  tazenaCisla.push(vyherniCislo);
-  osudi.splice(vyherniIndex, 1);
+  for (let j = 0; j < tazenaCisla.length; j++) {
+    vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>';
+  }
 }
 
 
-for(let j = 0; j < tazenaCisla.length; j++) {
-  vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>';
-}
+
+
+
+
+
+
+
