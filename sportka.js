@@ -16,9 +16,10 @@ for (let i = 1; i <= 49; i = i + 1) {
   osudi.push(i);
 }
 
-for (let j = 0; j < 7; j++) {
-  vyherniCislo.innerHTML += '<span class="cislo">' + '</span>';
-}
+//for (let j = 0; j < 7; j++) {
+//vyherniCislo.innerHTML += '<span class="cislo">' + '</span>';
+//}
+
 
 function losuj() {
   vyherniCislo.innerHTML = "";
@@ -35,16 +36,9 @@ function losuj() {
     osudi.splice(vyherniIndex, 1);
   }
 
+
   for (let j = 0; j < tazenaCisla.length; j++) {
-    vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>';
+    setTimeout(pockej, 1000);
+    function pockej () {(vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>')};
   }
 }
-
-
-
-
-
-
-
-
-
