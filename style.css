@@ -3,6 +3,7 @@
 html { box-sizing: border-box; }
 *, ::before, :after { box-sizing: inherit; }
 
+
 body {
 	margin: 0;
 	min-height: 100vh;
@@ -70,25 +71,21 @@ h1 {
 
 .tlacitko {
 	display: inline-block;
-	font-family: Monserrat, sans-serif;
 	font-size: 36px;
 	font-weight: bold;
+  font-family: 'Paytone One', sans-serif;
 	color: #fff;
 	text-decoration: none;
 	text-align: center;
-	text-shadow: 1px 1px 0px #c5376d;
-	padding: 30px 60px;
+	padding: 20px 60px;
 	position: relative;
 	cursor: pointer;
 	border: none;
-	background: #f78db5;
-	background-image: linear-gradient(bottom, #f78db5 0%, #ef5a92 100%);
+	background: #a11b69;
 	border-radius: 5px;
-	box-shadow: 0px 5px 0px 0px #c5376d, 0px 10px 5px #999;
-	outline: 0;
+  margin-top: 60 px;
 }
 
 .tlacitko:active {
 	top: 3px;
-	box-shadow: 0px 2px 0px 0px #c5376d, 0px 5px 3px #999;
 }

@@ -9,7 +9,10 @@
 
 let osudi = [];
 let tazenaCisla = [];
+let historieHer = [];
 let vyherniCislo = document.querySelector('#vyherni-cisla');
+let tlacitko = document.querySelector('.tlacitko');
+let odstavec = document.querySelector('#historie-her');
 
 
 for (let i = 1; i <= 49; i = i + 1) {
@@ -25,6 +28,7 @@ function losuj() {
   vyherniCislo.innerHTML = "";
   tazenaCisla.forEach(function (ele) {
     osudi.push(ele);
+    historieHer.push(ele);
   })
   tazenaCisla.splice(0, tazenaCisla.length);
 
@@ -39,6 +43,21 @@ function losuj() {
 
   for (let j = 0; j < tazenaCisla.length; j++) {
     setTimeout(pockej, 1000);
-    function pockej () {(vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>')};
+    function pockej() { vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>' };
+  }
+  setTimeout(pokracuj, 1000);
+
+  for (let k = 0; k < historieHer.length; k++) {
+    odstavec.innerHTML += historieHer[k] + ', ';
   }
 }
+
+
+function pokracuj() {
+  //let text = 'Pokračovat v losování?';
+  //if (confirm(text) == true) {
+  tlacitko.textContent = 'Chceš ještě losovat?';
+  //}
+}
+
+
