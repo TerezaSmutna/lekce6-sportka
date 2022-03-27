@@ -19,17 +19,15 @@ for (let i = 1; i <= 49; i = i + 1) {
   osudi.push(i);
 }
 
-//for (let j = 0; j < 7; j++) {
-//vyherniCislo.innerHTML += '<span class="cislo">' + '</span>';
-//}
-
 
 function losuj() {
   vyherniCislo.innerHTML = "";
+  tlacitko.style.visibility = 'hidden';
   tazenaCisla.forEach(function (ele) {
+      if (tazenaCisla.length > 0) {
     osudi.push(ele);
     historieHer.push(ele);
-  })
+  }})
   tazenaCisla.splice(0, tazenaCisla.length);
 
 
@@ -45,19 +43,19 @@ function losuj() {
     setTimeout(pockej, 1000);
     function pockej() { vyherniCislo.innerHTML += '<span class="cislo">' + tazenaCisla[j] + '</span>' };
   }
+
   setTimeout(pokracuj, 1000);
 
-  for (let k = 0; k < historieHer.length; k++) {
+  for (let k = 0; k < 7; k++) {
+    if (historieHer.length > 0) {
     odstavec.innerHTML += historieHer[k] + ', ';
-  }
+  }}
+  historieHer.splice(0, historieHer.length);
 }
 
-
 function pokracuj() {
-  //let text = 'Pokračovat v losování?';
-  //if (confirm(text) == true) {
+  tlacitko.style.visibility = 'visible';
   tlacitko.textContent = 'Chceš ještě losovat?';
-  //}
 }
 
 
